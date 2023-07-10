@@ -5,8 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Translate Text</title>
   <script src="./app.js" defer></script>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            black: '#16161D',
+            white: '#F8F8F8',
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body>
+<body class="bg-black text-white text-lg">
+  <main class="max-w-7xl mx-auto py-12">
+    <div class="inputs flex justify-center items-center gap-3 w-full">
+      <div class="flex flex-col justify-start items-stretch w-1/6">
+        <p>From</p>
+        <select name="translateFrom" id="translateFrom" class="text-black p-2 rounded-lg outline-none cursor-pointer">
+          <option value="0">Select a language</option>
+        </select>
+      </div>
+     
+      <div class="flex flex-col justify-start items-stretch w-4/6">
+        <p>Text</p>
+        <input type="text" placeholder="Type here..." class="text-black p-2 rounded-lg outline-none" id="userInput">
+      </div>
   
+      <div class="flex flex-col justify-start items-stretch w-1/6">
+        <p>To</p>
+        <select name="translateTo" id="translateTo" class="text-black p-2 rounded-lg outline-none cursor-pointer">
+          <option value="0">Select a language</option>
+        </select>
+      </div>
+    </div>
+    <div class="flex justify-center items-center my-8">
+      <button id="btn" class="py-2 w-2/6 rounded-lg bg-rose-600 tracking-widest font-semibold transition-all hover:bg-rose-500 hover:scale-95">Translate</button>
+    </div>
+
+    <div id="spinner" role="status" class="flex justify-center items-center hidden">
+      <div class="spin animate-spin"></div>
+    </div>
+
+    <div id="container" class="answers flex justify-center items-center">
+
+    </div>
+  </main>
 </body>
 </html>

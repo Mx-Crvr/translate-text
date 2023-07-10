@@ -1,0 +1,12 @@
+.answer {
+  font-size: 2em;
+}
+
+.spin {
+  border: solid 8px #fecdd3;
+  border-bottom-color: #e11d48;
+  border-radius: 50%;
+  content: "";
+  height: 100px;
+  width: 100px;
+}
