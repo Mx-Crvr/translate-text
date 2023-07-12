@@ -5,6 +5,7 @@ const translateTo = document.getElementById('translateTo');
 const translateFrom = document.getElementById('translateFrom');
 const userInput = document.getElementById('userInput');
 const container = document.getElementById('container');
+const spinner = document.getElementById('spinner');
 
 window.onload = () => {
   getLang();
@@ -70,15 +71,29 @@ async function translate() {
     container.appendChild(answer);
     answer.innerText = translatedText(data);
     answer.classList.add('answer');
-
-    console.log(translatedText(data));
   } catch (error) {
     console.error(error);
   }
 }
 
+const showSpinner = () => spinner.style.display = 'flex';
+const hideSpinner = () => spinner.style.display = 'none';
+
 const btn = document.getElementById('btn');
 btn.addEventListener('click', () => {
-  container.innerText = ''
-  translate();
+  container.innerText = '';
+  if (translateFrom.value == '0') {
+    alert('Please select the source language');
+  } else if (translateTo.value == '0') {
+    alert('Please select a target language');
+  } else if (userInput.value == '') {
+    alert('Please enter test to translate')
+  }else {
+    showSpinner();
+    setTimeout(() => {
+      hideSpinner()
+      translate();
+    }, 3000);
+  }
+  
 })

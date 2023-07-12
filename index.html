@@ -22,23 +22,23 @@
 </head>
 <body class="bg-black text-white text-lg">
   <main class="max-w-7xl mx-auto py-12">
-    <div class="inputs flex justify-center items-center gap-3 w-full">
-      <div class="flex flex-col justify-start items-stretch w-1/6">
+    <div class="inputs flex flex-col justify-center items-center gap-3 w-full lg:flex-row px-5 lg:p-0 mt-16 lg:mt-0">
+      <div class="flex flex-col justify-start items-stretch w-full lg:w-1/6 ">
         <p>From</p>
         <select name="translateFrom" id="translateFrom" class="text-black p-2 rounded-lg outline-none cursor-pointer">
           <option value="0">Select a language</option>
         </select>
       </div>
      
-      <div class="flex flex-col justify-start items-stretch w-4/6">
+      <div class="flex flex-col justify-start items-stretch w-full lg:w-4/6">
         <p>Text</p>
         <input type="text" placeholder="Type here..." class="text-black p-2 rounded-lg outline-none" id="userInput">
       </div>
   
-      <div class="flex flex-col justify-start items-stretch w-1/6">
+      <div class="flex flex-col justify-start items-stretch w-full lg:w-1/6">
         <p>To</p>
         <select name="translateTo" id="translateTo" class="text-black p-2 rounded-lg outline-none cursor-pointer">
-          <option value="0">Select a language</option>
+          <option value="0" class="option">Select a language</option>
         </select>
       </div>
     </div>
@@ -46,7 +46,7 @@
       <button id="btn" class="py-2 w-2/6 rounded-lg bg-rose-600 tracking-widest font-semibold transition-all hover:bg-rose-500 hover:scale-95">Translate</button>
     </div>
 
-    <div id="spinner" role="status" class="flex justify-center items-center hidden">
+    <div id="spinner" role="status" class="hidden justify-center items-center">
       <div class="spin animate-spin"></div>
     </div>
 
